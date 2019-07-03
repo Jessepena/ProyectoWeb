@@ -1,0 +1,18 @@
+<div class=" ui container">
+<form class="ui form">
+  <div class="field">
+    <label>Email</label>
+    <input [(ngModel)]="email" type="email" name="first-name" placeholder="First Name">
+  </div>
+  <div class="field">
+    <label>Pass</label>
+    <input [(ngModel)]="password" type="password" name="last-name" placeholder="Last Name">
+  </div>
+  <button class="ui button" type="submit" (click)="login()">Submit</button>
+</form>
+
+
+<div class="alert alert-dark" role="alert" *ngIf="error">
+  {{error}}
+</div>
+</div>

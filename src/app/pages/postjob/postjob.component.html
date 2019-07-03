@@ -1,0 +1,67 @@
+<div class=" ui container">
+<div class="ui form">
+
+  <h4 class="ui dividing header">Empleo</h4>
+
+
+
+    <div class="two fields">
+
+      <div class="field">
+        <input type="text" placeholder="Compania" [(ngModel)]="company">
+      </div>
+
+      <div class="field">
+        <select class="ui fluid dropdown" [(ngModel)]="type">
+          <option ngvalue="Fulltime">Fulltime</option>
+          <option ngvalue="Parttime">Parttime</option>
+          <option ngvalue="Freelance">Freelance</option>
+        </select>
+      </div>
+
+    </div>
+
+
+  <div class="two fields">
+
+    <div class="field">
+      <input type="text" placeholder="Posicion" [(ngModel)]="position">
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Localizacion" [(ngModel)]="location">
+    </div>
+
+  </div>
+
+  <div class="two fields">
+
+    <div class="field">
+      <select class="ui fluid dropdown" [(ngModel)]="category">
+        <option ngvalue="Design">Design</option>
+        <option ngvalue="Programming">Programming</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Descripcion" [(ngModel)]="description">
+    </div>
+
+  </div>
+
+  <div class="two fields">
+
+    <div class="field">
+      <input type="text" placeholder="Como aplicar" [(ngModel)]="howto">
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Email" [(ngModel)]="email">
+    </div>
+
+  </div>
+
+  <div class="ui button" tabindex="0" (click)="guardar()">Enviar</div>
+
+</div>
+</div>

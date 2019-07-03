@@ -1,0 +1,26 @@
+<br><br>
+
+<div class=" ui container">
+  <button class="ui button" id="btn-login"
+          style="float: right" routerLink="/login">Sign Up</button>
+
+  <br><br>
+
+
+<table class="ui selectable celled table" *ngIf="lista && lista.length > 0">
+  <thead>
+  <tr class="table-secondary">
+    <th>Localizacion</th>
+    <th>Posicion</th>
+    <th>Compania</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let job of lista">
+    <td>{{job.location}}</td>
+    <td><a href="#" routerLink="/detailjob/{{job.email}}">{{job.position}}</a></td>
+    <td>{{job.company}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>

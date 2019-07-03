@@ -1,0 +1,81 @@
+<div class=" ui container">
+
+  <button class="ui button" id="btn-login"
+          style="float: right" routerLink="/login">Sign Up</button>
+
+  <br><br><br>
+
+  <div class="input-group-append">
+
+    <div class="ui input icon" style="float: left;">
+
+      <input type="text" placeholder="Search...">
+      <i class="circular search link icon"></i>
+
+    </div>
+
+    <button class="ui primary button" style="float: left;">Search</button>
+
+    <button class="ui green button" style="float: right;" routerLink="/postjob">
+      <i class="bullhorn icon"></i> Post a Job</button>
+
+  </div>
+
+  <br><br><br><br>
+
+  <!-- Mostrar si tenemos empleos solamente -->
+      <div *ngIf="empleos && empleos.length > 0">
+
+        <!-- un for de todas las categorias -->
+        <div *ngFor="let category of categories">
+
+          <br>
+          <a href="#" routerLink="/vertodo/{{category}}">
+          <h3 class="ui horizontal divider header">
+            {{category}}
+          </h3>
+          </a>
+
+          <table class="ui celled table">
+            <thead>
+            <tr class="table-secondary">
+              <th scope="col">Location</th>
+              <th scope="col">Position</th>
+              <th scope="col">Company</th>
+              <th scope="col">Created</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- mostrar empleo solamente si pertenece a la categoria actual en el for -->
+            <tr *ngFor="let empleo of filtrarPorCategoria(category)">
+              <td scope="row">{{empleo.location}}</td>
+              <td>{{empleo.position}}</td>
+              <td>{{empleo.company}}</td>
+              <td>{{empleo.created.toDate() | date : 'mediumDate'}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr><th colspan="5">
+              <div class="ui right floated pagination menu">
+                <a class="icon item">
+                  <i class="left chevron icon"></i>
+                </a>
+                <a class="item">1</a>
+                <a class="item">2</a>
+                <a class="item">3</a>
+                <a class="item">4</a>
+                <a class="icon item">
+                  <i class="right chevron icon"></i>
+                </a>
+              </div>
+            </th>
+            </tr></tfoot>
+          </table>
+
+      </div>
+
+      <br><br><br><br><br>
+
+      </div>
+
+</div>
